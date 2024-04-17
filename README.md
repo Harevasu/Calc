@@ -1,5 +1,5 @@
 # Ex.08 Design of a Standard Calculator
-## Date:
+## Date:14/04/24
 
 ## AIM:
 To design a web application for a standard calculator with minimum five operations.
@@ -25,8 +25,131 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdfdfb;
+            font-family: Arial, sans-serif;
+        }
 
+        .calculator {
+            width: 300px;
+            padding: 20px;
+            background-color: #1fc3cf;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            border: 2px solid #f030f7;
+            margin-bottom: 10px;
+            font-size: 24px;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: right;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            background-color: #e641b4;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #b0aaeb;
+        }
+
+        button:active {
+            background-color: #24e063;
+        }
+
+        .equals {
+            grid-column: span 4;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="calculator">
+        <h1>HAREVASU S   (212223230069)</h1>
+        <input type="text" style="background-color: #e8ece9;"  id="display" >
+        <div class="buttons">
+            <button onclick="clearDisplay()" style="background-color: rgb(232, 144, 12);">C</button>
+            <button onclick="inputValue('/')">/</button>
+            <button onclick="inputValue('*')">*</button>
+            <button onclick="inputValue('.')">.</button>
+            <button onclick="inputValue()">(</button>
+            <button onclick="inputValue()">)</button>
+            <button onclick="inputValue('%')">%</button>
+            <button onclick="inputValue('^')">^</button>
+            <button onclick="inputValue('7')">7</button>
+            <button onclick="inputValue('8')">8</button>
+            <button onclick="inputValue('9')">9</button>
+            <button onclick="inputValue('-')">-</button>
+            <button onclick="inputValue('4')">4</button>
+            <button onclick="inputValue('5')">5</button>
+            <button onclick="inputValue('6')">6</button>
+            <button onclick="inputValue('+')">+</button>
+            <button onclick="inputValue('1')">1</button>
+            <button onclick="inputValue('2')">2</button>
+            <button onclick="inputValue('3')">3</button>
+            <button onclick="inputValue('0')">0</button>
+            <button onclick="calculateResult()" class="equals" style="background-color: burlywood;">=</button>
+            
+            
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+
+        function inputValue(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = '';
+        }
+
+        function calculateResult() {
+            try {
+                // eval can be dangerous if you are working with user input on sensitive data/systems.
+                display.value = eval(display.value).toString();
+            } catch (error) {
+                display.value = 'Error';
+                setTimeout(clearDisplay, 2000); // Clear after 2 seconds
+            }
+        }
+    </script>
+</body>
+</html>
+```
 ## OUTPUT:
+![image](https://github.com/Harevasu/Calc/assets/147985044/c1d1e636-ec99-48d1-b1e3-b4c22f4c3a93)
+
 
 ## RESULT:
 The program for designing a standard calculator using HTML and CSS is executed successfully.
