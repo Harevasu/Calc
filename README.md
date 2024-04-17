@@ -42,7 +42,6 @@ Publish the website in the given URL.
             background-color: #fdfdfb;
             font-family: Arial, sans-serif;
         }
-
         .calculator {
             width: 300px;
             padding: 20px;
@@ -50,7 +49,6 @@ Publish the website in the given URL.
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-
         #display {
             width: 100%;
             height: 50px;
@@ -62,13 +60,11 @@ Publish the website in the given URL.
             text-align: right;
             border-radius: 5px;
         }
-
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
         }
-
         button {
             background-color: #e641b4;
             border: none;
@@ -78,22 +74,18 @@ Publish the website in the given URL.
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         button:hover {
             background-color: #b0aaeb;
         }
-
         button:active {
             background-color: #24e063;
         }
-
         .equals {
             grid-column: span 4;
         }
     </style>
 </head>
 <body>
-   
     <div class="calculator">
         <h1>HAREVASU S   (212223230069)</h1>
         <input type="text" style="background-color: #e8ece9;"  id="display" >
@@ -118,22 +110,17 @@ Publish the website in the given URL.
             <button onclick="inputValue('2')">2</button>
             <button onclick="inputValue('3')">3</button>
             <button onclick="inputValue('0')">0</button>
-            <button onclick="calculateResult()" class="equals" style="background-color: burlywood;">=</button>
-            
-            
+            <button onclick="calculateResult()" class="equals" style="background-color: burlywood;">=</button>            
         </div>
     </div>
     <script>
         const display = document.getElementById('display');
-
         function inputValue(value) {
             display.value += value;
         }
-
         function clearDisplay() {
             display.value = '';
         }
-
         function calculateResult() {
             try {
                 // eval can be dangerous if you are working with user input on sensitive data/systems.
